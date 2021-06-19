@@ -18,17 +18,6 @@ include 'common.php';
 $w = (isset($_GET['w'])) ? intval($_GET['w']) : '';
 $fromfile = $_GET['fromfile'];
 $auction_id = $_GET['auction_id'];
-
-// check passed values
-if (!isset($_GET['fromfile']) ||
-	!isset($_GET['auction_id']) || !is_numeric($auction_id)) {
-    ErrorPNG($ERR_716);
-    exit;
-} elseif (!file_exists($_GET['fromfile']) && !fopen($_GET['fromfile'], 'r')) {
-    ErrorPNG($ERR_716);
-    exit;
-}
-
 if ($fromfile != '') {
 	// clean fromfile
 	$fromfile = basename($fromfile);
@@ -38,6 +27,25 @@ if ($fromfile != '') {
 	// if empty filename just show default image
 	$file_path = MAIN_PATH . 'images/email_alerts/default_item_img.jpg';
 }
+// check passed values
+if (!isset($_GET['fromfile']) ||
+	!isset($_GET['auction_id']) || !is_numeric($auction_id)) {
+    ErrorPNG($ERR_716);
+    exit;
+} elseif (!file_exists($_GET['$file_path']) && !fopen($_GET['$file_path'], 'r')) {
+    ErrorPNG($ERR_716);
+    exit;
+}
+
+//if ($fromfile != '') {
+	// clean fromfile
+//	$fromfile = basename($fromfile);
+	// build file path
+//	$file_path = UPLOAD_FOLDER . $auction_id . '/' . $fromfile;
+//} else {
+	// if empty filename just show default image
+	//$file_path = MAIN_PATH . 'images/email_alerts/default_item_img.jpg';
+//}
 
 $nomanage = false;
 $accepted_widths = array(
