@@ -44,7 +44,8 @@ if ($user_data['birthdate'] != 0) {
         $birthdate = $birth_day . '/' . $birth_month . '/' . $birth_year;
     }
 } else {
-    $birthdate = '';
+    $birthdate = 0;
+    // changed to 0 
 }
 
 // Retrieve users signup settings
@@ -103,7 +104,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'update') {
             } else {
                 $birthdate = 0;
             }
-
+        }
+        //this was moved up. i might have killed the error handeling
+       // groups were enclosed in ``
             $query = "UPDATE " . $DBPrefix . "users SET
                       name = :name,
                       email = :email,
@@ -114,7 +117,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'update') {
                       zip = :zip,
                       phone = :phone,
                       birthdate = :birthdate,
-                      groups = :groups,
+                      `groups` = :groups,
                       balance = :balance";
             $params = array();
             $params[] = array(':name', $system->cleanvars($_POST['name']), 'str');
@@ -153,7 +156,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'update') {
     } else {
         $template->assign_block_vars('alerts', array('TYPE' => 'error', 'MESSAGE' => $ERR_112));
     }
-}
+//} this was moved up. i might have broken error handeling
 
 $query = "SELECT country_id, country FROM " . $DBPrefix . "countries";
 $db->direct_query($query);
