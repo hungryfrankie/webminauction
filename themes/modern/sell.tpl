@@ -402,6 +402,37 @@ $(document).ready(function(){
 						{CURRENCY}
 					</div>
 	<!-- ENDIF -->
+	<!-- IF B_SHOW_OFFERME -->
+	<!-- IF B_SHOW_OFFERME_ZERO -->
+	<div class="form-group col-md-12 " >
+    	
+		<!-- ENDIF -->
+	<!-- IF B_SHOW_OFFERME_ONE-->
+	<div class="form-group col-md-12  dutchshow "  style="display:none;">
+	<!-- ENDIF -->
+	<!-- IF B_SHOW_OFFERME_TWO -->
+	<div class="form-group col-md-12 dutchhide" >
+	<!-- ENDIF -->	
+			
+
+						<label>{L_9021}  <a data-toggle="popover" title="{L_19716}" data-content="{L_9716}"><img src="{SITEURL}themes/modern2/img/info_button_s.png" alt="{L_9011}" width="15" height="15"></a></label>
+						<div class="radio">
+								<label class="radio-inline">
+								<input type="radio" name="with_offer" id="with_offer_no" value="no" {OFFER_N}>
+								{L_no}</label>
+							        <label class="radio-inline">
+								<input type="radio" name="with_offer" id="with_offer_yes" value="yes" {OFFER_Y}>
+								{L_yes}</label>
+								<br>
+						<label>{L_9022}  <a data-toggle="popover" title="{L_19717}" data-content="{L_9717}"><img src="{SITEURL}themes/modern2/img/info_button_s.png" alt="{L_9011}" width="15" height="15"></a></label>
+						<div><input type="text" name="make_offer_reject" id="make_offer_reject" class="form-control" value="{MAKE_OFFER_REJECT}">
+	                    {CURRENCY}</div>
+                                                 <label>{L_9023}  <a data-toggle="popover" title="{L_19718}" data-content="{L_9718}"><img src="{SITEURL}themes/modern2/img/info_button_s.png" alt="{L_9011}" width="15" height="15"></a></label>
+						<div><input type="text" name="make_offer_accept" id="make_offer_accept" class="form-control" value="{MAKE_OFFER_ACCEPT}">
+	                    {CURRENCY}</div>
+					<input type="hidden" name="with_offers" id="with_offers">
+					</div>
+			<!-- ENDIF -->		
 	<!-- IF B_EDIT_STARTTIME -->
 					<div class="form-group col-md-12">
 						<label for="a_starts">{L_2__0016}</label>
