@@ -190,6 +190,11 @@ function unsetsessions()
     $_SESSION['SELL_start_now'] = '';
     $_SESSION['SELL_is_taxed'] = 0;
     $_SESSION['SELL_tax_included'] = 0;
+	 //bof make offer
+    $_SESSION['SELL_with_offers'] = '';
+    $_SESSION['SELL_make_offer_reject'] ='';
+    $_SESSION['SELL_make_offer_accept'] ='';
+   // eof make offer
     $_SESSION['SELL_caneditstartdate'] = true;
 }
 
