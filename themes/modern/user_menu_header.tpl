@@ -70,12 +70,14 @@
 				<a class="list-group-item" href="yourauctions_s.php">{L_2__0056}</a>
 				<a class="list-group-item" href="yourauctions_sold.php">{L_25_0119}</a>
 				<a class="list-group-item" href="selling.php">{L_453}</a>
+				<a class="list-group-item" href="viewselleroffers.php">{L_9453}</a>
 <!-- ENDIF -->
 				<a class="list-group-item disabled" href="{SITEURL}user_menu.php?cptab=buying">{L_25_0083}</a>
 				<a class="list-group-item" href="auction_watch.php">{L_471}</a>
 				<a class="list-group-item" href="item_watch.php">{L_472}</a>
 				<a class="list-group-item" href="yourbids.php">{L_620}</a>
 				<a class="list-group-item" href="buying.php">{L_454}</a>
+				<a class="list-group-item" href="youroffers.php">{L_1454}</a>
 			</div>
 		</div>
 	</div>
