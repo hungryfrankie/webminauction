@@ -691,3 +691,21 @@ $MSG['registration_ip'] = "Registration IP";
 
 // wordsfilter.php
 $MSG['word_filter_updated'] = "Words Filter Updated";
+// makeoffer.php
+$MSG['make_an_offer_settings_updated'] = "Make an offer settings updates";
+$MSG['enable_make_an_offer'] = "Enable Make an offer?";
+$MSG['enable_make_an_offer_explain'] = "Gives an option to sellers to have a Make an offer option";
+$MSG['enable_make_an_offer_only'] = "Enable Make an offer ?";
+$MSG['enable_make_an_offer_only_explain'] = "Give your sellers the ability to set up make an offer option.";
+$MSG['enable_mon_only_auto_disable_explain'] = "To allow seller to use a  Make an offer feature ";
+$MSG['make_an_offer_only_limit'] = "Make an offer only limit";
+
+$MSG['9069'] = "Item Conditions";
+$MSG['9087'] = "Conditions";
+$MSG['9122'] = "Edit, delete or add item conditions using the form below";
+$MSG['9097'] = "Description";
+$MSG['auction'] = "For all items";
+$MSG['dutch'] = "For Dutch Auctions Only";
+$MSG['nooffer'] = "For Bidding auctions only";
+$MSG['addoffer'] = "Enable/Disable make offer feature";
+
