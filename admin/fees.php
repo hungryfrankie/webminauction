@@ -31,9 +31,10 @@ $fees = array( //0 = single value, 1 = staged fees
     'picture_fee' => 0,
     'relist_fee' => 0,
     'buynow_fee' => 0,
+     'offer_fee' => 0,
     'endauc_fee' => 1
     );
-
+//bof added offer fee to the array above
 $feenames = array(
     'signup_fee' => $MSG['430'],
     'buyer_fee' => $MSG['775'],
@@ -47,9 +48,10 @@ $feenames = array(
     'picture_fee' => $MSG['435'],
     'relist_fee' => $MSG['437'],
     'buynow_fee' => $MSG['436'],
+    'offer_fee' => $MSG['9035'],
     'endauc_fee' => $MSG['791']
     );
-
+//bof added offer fee to the array above
 if (isset($_GET['type']) && isset($fees[$_GET['type']])) {
     if ($fees[$_GET['type']] == 0) {
         if (isset($_POST['action']) && $_POST['action'] == 'update') {
