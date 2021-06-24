@@ -535,6 +535,13 @@ $template->assign_vars(array(
         'B_CAN_BUY' => ($user->permissions['can_buy'] || (!$user->logged_in && $system->SETTINGS['bidding_visable_to_guest'])) && !(strtotime($start) > time()),
         'B_SHIPPING' => ($system->SETTINGS['shipping'] == 'y'),
         'B_SHOWENDTIME' => $showendtime,
+	 //bof make offer
+        'ITEM_SHOW_OFFER'=>$auction_data['make_offer'],
+        'OFFER_ACCEPT'=>$auction_data['make_offer_accept'],
+        'OFFER_REJECT'=>$auction_data['make_offer_reject'],
+        'VIEWING_BIDDER'=>$user->user_data['id'],
+        'TIME_BLUB'=> time()
+        // eof make offer
         'B_SHOW_ADDITIONAL_SHIPPING_COST' => ($auction_data['additional_shipping_cost'] > 0)
         ));
 
