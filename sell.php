@@ -449,7 +449,7 @@ switch ($_SESSION['action']) {
                     'OFFER_Y' => ($with_offer == 'yes') ? 'checked' : '',
                     'OFFER_N' => ($with_offer == 'yes') ? '' : 'checked',                   
                     'MAKE_OFFER_REJECT' =>  $system->print_money($make_offer_reject, false),
-                    'MAKE_OFFER_ACCEPT' =>  $system->print_money($make_offer_accept, false)
+                    'MAKE_OFFER_ACCEPT' =>  $system->print_money($make_offer_accept, false),
                     'B_SUBTITLE' => ($system->SETTINGS['subtitle'] == 'y')
                     ));
             break;
