@@ -200,7 +200,7 @@ function unsetsessions()
 
 function updateauction()
 {
-    global $_SESSION, $DBPrefix, $dt, $a_starts, $a_ends, $payment_text, $system, $fee, $db, $caneditstartdate;
+    global $_SESSION, $DBPrefix, $dt, $a_starts, $a_ends, $payment_text, $system, $fee, $db,$make_offer,$with_offer, $caneditstartdate;
 
     $query =
         "UPDATE " . $DBPrefix . "auctions SET
@@ -232,6 +232,9 @@ function updateauction()
 		bold = :bold,
 		highlighted = :highlighted,
 		featured = :featured,
+		make_offer = :make_offer,
+                make_offer_reject = :make_offer_reject,
+                make_offer_accept = :make_offer_accept,
 		tax = :tax,
 		taxinc = :taxinc,
 		current_fee = current_fee + :fee";
@@ -263,6 +266,11 @@ function updateauction()
     $params[] = array(':bold', $_SESSION['SELL_is_bold'], 'bool');
     $params[] = array(':highlighted', $_SESSION['SELL_is_highlighted'], 'bool');
     $params[] = array(':featured', $_SESSION['SELL_is_featured'], 'bool');
+	// bof make offer
+    $params[] = array(':make_offer', $_SESSION['SELL_with_offer'], 'str');
+    $params[] = array(':make_offer_reject', $_SESSION['SELL_make_offer_reject'], 'float');
+    $params[] = array(':make_offer_accept', $_SESSION['SELL_make_offer_accept'], 'float');
+    // eof make offer
     $params[] = array(':tax', $_SESSION['SELL_is_taxed'], 'bool');
     $params[] = array(':taxinc', $_SESSION['SELL_tax_included'], 'bool');
     $params[] = array(':fee', $fee, 'float');
