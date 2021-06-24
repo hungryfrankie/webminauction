@@ -177,6 +177,30 @@ $(document).ready(function(){
 		else
 			updatefee(featured_fee * -1);
 	});
+	$("#with_offer_yes").click(function() {
+		make_offer();
+	});
+	
+    $("#with_offer_no").click(function() {
+	    $("#make_offer_reject").val(0);
+        $("#make_offer_accept").val(0);
+		make_offer();
+	});
+    function make_offer() {
+		
+		if ($('#with_offer_yes').is(':checked')){
+			updatefee(offer_fee);
+			 document.getElementById("with_offers").value="yes";
+            document.getElementById("with_offer_yes").disabled = true;  
+		    document.getElementById("with_offer_no").disabled = false; 
+	    }
+        if ($('#with_offer_no').is(':checked')){
+			updatefee(offer_fee * -1);	
+			document.getElementById("with_offers").value="no";
+			document.getElementById("with_offer_no").disabled = true;  
+		    document.getElementById("with_offer_yes").disabled = false; 
+	    }
+	}
 	$("#is_bold").click(function() {
 		if ($('#is_bold').is(':checked'))
 			updatefee(bold_fee);
