@@ -109,7 +109,7 @@ function setvars()
 function makesessions()
 {
     global $with_reserve, $reserve_price, $minimum_bid, $pict_url, $imgtype, $title, $subtitle, $sdescription, $pict_url, $atype, $iquantity, $buy_now, $buy_now_price, $is_taxed, $tax_included, $additional_shipping_cost;
-    global $duration, $relist, $increments, $customincrement, $shipping, $shipping_terms, $payment, $international, $sendemail, $buy_now_only, $a_starts, $shipping_cost, $is_bold, $is_highlighted, $is_featured, $start_now, $_SESSION;
+    global $duration, $relist, $increments, $customincrement, $shipping, $shipping_terms, $payment, $international, $sendemail, $buy_now_only, $a_starts, $shipping_cost, $is_bold, $is_highlighted, $is_featured, $start_now,$with_offer,$make_offer_reject,$make_offer_accept, $_SESSION;
     global $a_ends, $custom_end, $caneditstartdate;
 
     $_SESSION['SELL_with_reserve'] = $with_reserve;
@@ -144,6 +144,11 @@ function makesessions()
     $_SESSION['SELL_start_now'] = $start_now;
     $_SESSION['SELL_is_taxed'] = $is_taxed;
     $_SESSION['SELL_tax_included'] = $tax_included;
+	// bof make offer
+    $_SESSION['SELL_with_offers'] = $with_offer;
+    $_SESSION['SELL_make_offer_reject'] = $make_offer_reject;
+    $_SESSION['SELL_make_offer_accept'] = $make_offer_accept;
+    // eof make offer
     $_SESSION['SELL_caneditstartdate'] = $caneditstartdate;
 }
 
