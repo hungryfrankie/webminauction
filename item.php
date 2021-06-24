@@ -540,7 +540,7 @@ $template->assign_vars(array(
         'OFFER_ACCEPT'=>$auction_data['make_offer_accept'],
         'OFFER_REJECT'=>$auction_data['make_offer_reject'],
         'VIEWING_BIDDER'=>$user->user_data['id'],
-        'TIME_BLUB'=> time()
+        'TIME_BLUB'=> time(),
         // eof make offer
         'B_SHOW_ADDITIONAL_SHIPPING_COST' => ($auction_data['additional_shipping_cost'] > 0)
         ));
