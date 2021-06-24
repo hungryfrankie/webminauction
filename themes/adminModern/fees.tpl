@@ -94,6 +94,7 @@
 							<div class="col-md-3"><a href="{SITEURL}admin/fees.php?type=buynow_fee">{L_436}</a></div>
 							<div class="col-md-3"><a href="{SITEURL}admin/fees.php?type=endauc_fee">{L_791}</a></div>
 							<div class="col-md-3"><a href="{SITEURL}admin/fees.php?type=extracat_fee">{L_804}</a></div>
+								<div class="col-md-3"><a href="{SITEURL}admin/fees.php?type=offer_fee">{L_9035}</a></div>
 						</div>
 					</div>
 				</div>
