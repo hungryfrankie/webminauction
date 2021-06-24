@@ -479,6 +479,12 @@ function get_fee($minimum_bid, $just_fee = true)
             $fee_data['relist_fee'] = ($row['value'] * $relist);
             $fee_value = bcadd($fee_value, ($row['value'] * $relist), $system->SETTINGS['moneydecimals']);
         }
+	    // bof make offer
+	    if ($row['type'] == 'offer_fee' && ($with_offer=='yes')) {
+            $fee_data['offer_fee'] = ($row['value']);
+            $fee_value = bcadd($fee_value, ($row['value']), $system->SETTINGS['moneydecimals'])
+        }
+	    // eof make offer
     }
 
     if ($just_fee) {
