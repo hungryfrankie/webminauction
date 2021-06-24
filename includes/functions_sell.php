@@ -31,7 +31,7 @@ function generate_id()
 function setvars()
 {
     global $with_reserve, $reserve_price, $minimum_bid, $pict_url, $imgtype, $title, $subtitle, $sdescription, $atype, $iquantity, $buy_now, $buy_now_price, $is_taxed, $tax_included, $additional_shipping_cost;
-    global $duration, $relist, $increments, $customincrement, $shipping, $shipping_terms, $payment, $international, $sellcat1, $sellcat2, $buy_now_only, $a_starts, $shipping_cost, $is_bold, $is_highlighted, $is_featured, $start_now;
+    global $duration, $relist, $increments, $customincrement, $shipping, $shipping_terms, $payment, $international, $sellcat1, $sellcat2, $buy_now_only, $a_starts, $shipping_cost, $is_bold, $is_highlighted, $is_featured, $make_offer_reject, $make_offer_accept, $start_now;
     global $_POST, $_SESSION, $system, $custom_end, $a_ends, $custom_end, $caneditstartdate, $dt;
 
     $with_reserve = (isset($_POST['with_reserve'])) ? $_POST['with_reserve'] : $_SESSION['SELL_with_reserve'];
@@ -66,7 +66,11 @@ function setvars()
     $caneditstartdate = $_SESSION['SELL_caneditstartdate'];
     $buy_now_only = (isset($_POST['buy_now_only'])) ? $_POST['buy_now_only'] : $_SESSION['SELL_buy_now_only'];
     $buy_now_only = (empty($buy_now_only)) ? 0 : $buy_now_only;
-
+// bof make offer
+    $with_offer = (isset($_POST['with_offers'])) ? $_POST['with_offers'] : $_SESSION['SELL_with_offers'];
+    $make_offer_reject= (isset($_POST['make_offer_reject'])) ? $_POST['make_offer_reject'] : $_SESSION['SELL_make_offer_reject'];
+    $make_offer_accept= (isset($_POST['make_offer_accept'])) ? $_POST['make_offer_accept'] : $_SESSION['SELL_make_offer_accept'];
+    //eof make offer
     $a_starts = (isset($_POST['a_starts'])) ? $dt->convertToDatetime($_POST['a_starts']) : $_SESSION['SELL_starts'];
     $duration = (isset($_POST['duration'])) ? $_POST['duration'] : $_SESSION['SELL_duration'];
     $a_ends = (isset($_POST['a_ends'])) ? $dt->convertToDatetime($_POST['a_ends']) : $_SESSION['SELL_ends'];
