@@ -1901,8 +1901,8 @@ $query[] = "CREATE TABLE `" . $DBPrefix . "winners` (
 # Table structure for table `" . $DBPrefix . "offers`
 #
 
-$query[] = "DROP TABLE IF EXISTS `" . $DBPrefix . "banners`;";
-$query[] = "CREATE TABLE `" . $DBPrefix . "banners` (
+$query[] = "DROP TABLE IF EXISTS `" . $DBPrefix . "offers`;";
+$query[] = "CREATE TABLE `" . $DBPrefix . "offers` (
     `offer_id` int(11) NOT NULL auto_increment,
     `offer_item_id` varchar(255) default NULL,
     `offer_item_image` varchar(255) default NULL,
