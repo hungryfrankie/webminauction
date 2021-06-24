@@ -66,6 +66,16 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['img'])
 if (isset($_GET['action']) && $_GET['action'] == 'makedefault') {
     $_SESSION['SELL_pict_url_temp'] = $_SESSION['SELL_pict_url'] = $_GET['img'];
 }
+// i don't know why i have to do this
+if ($_SESSION['SELL_title'] == ''){
+    $_SESSION['SELL_current_fee']='0';
+    //bof make offer
+    $_SESSION['SELL_with_offers'] ='';
+    $_SESSION['SELL_make_offer_reject'] ='';
+    $_SESSION['SELL_make_offer_accept'] ='';
+   // eof make offer
+  
+}
 
 // set variables
 setvars();
@@ -384,7 +394,20 @@ switch ($_SESSION['action']) {
             if ($corrected_fee < 0) {
                 $corrected_fee = 0;
             }
-
+///bof make offer
+            if ($system->SETTINGS['offer_available'] == 'y') {
+                $template->assign_vars(array(
+                    'B_SHOW_OFFERME' => 'true'
+                ));
+              
+               if ($system->SETTINGS['offer_available_for'] == '1'){
+                $template->assign_vars(array(
+                    'B_SHOW_OFFERME_DUTCHONLY' => 'true'
+                ));
+                }
+              
+            }
+       // eof make offer
             $template->assign_vars(array(
                     'TITLE' => htmlspecialchars($title),
                     'SUBTITLE' => htmlspecialchars($subtitle),
@@ -421,6 +444,12 @@ switch ($_SESSION['action']) {
                     'B_CUSINC' => ($system->SETTINGS['cust_increment'] == 1),
                     'B_FEES' => ($system->SETTINGS['fees'] == 'y' && !$user->permissions['no_fees']),
                     'B_SHIPPING' => ($system->SETTINGS['shipping'] == 'y'),
+		     // bof make offer
+                    'WITH_OFFER' => $with_offer,
+                    'OFFER_Y' => ($with_offer == 'yes') ? 'checked' : '',
+                    'OFFER_N' => ($with_offer == 'yes') ? '' : 'checked',                   
+                    'MAKE_OFFER_REJECT' =>  $system->print_money($make_offer_reject, false),
+                    'MAKE_OFFER_ACCEPT' =>  $system->print_money($make_offer_accept, false)
                     'B_SUBTITLE' => ($system->SETTINGS['subtitle'] == 'y')
                     ));
             break;
@@ -514,6 +543,8 @@ switch ($_SESSION['action']) {
             'picture_fee' => 0,
             'buynow_fee' => 0,
             'subtitle_fee' => 0,
+		// next line for make offer
+	    'offer_fee' => 0,
             'relist_fee' => 0
             );
         $feevarsset = array();
@@ -556,6 +587,12 @@ switch ($_SESSION['action']) {
             if ($row['type'] == 'relist_fee' && strlen($relist) > 0) {
                 $relist_fee = $row['value'];
             }
+		  // bof make offer
+           
+            if ($row['type'] == 'offer_fee'&& ($with_offer=='yes') ) {
+                $offer_fee = $row['value'];
+            }
+            // eof make offer
         }
         $current_fee = ((isset($_SESSION['SELL_current_fee'])) ? $_SESSION['SELL_current_fee'] : '0');
         $fee_javascript .= 'var current_fee = ' . $current_fee . ';';
@@ -569,7 +606,28 @@ switch ($_SESSION['action']) {
         if ($corrected_fee < 0) {
             $corrected_fee = 0;
         }
-
+// bof make offer
+       if ($system->SETTINGS['offer_available'] == 'y') {
+            $template->assign_vars(array(
+                'B_SHOW_OFFERME' => 'true'
+            ));
+            if ($system->SETTINGS['offer_available_for'] == '0'){
+                $template->assign_vars(array(
+                    'B_SHOW_OFFERME_ZERO' => 'true'
+                ));
+                }
+           if ($system->SETTINGS['offer_available_for'] == '1'){
+            $template->assign_vars(array(
+                'B_SHOW_OFFERME_ONE' => 'true'
+            ));
+            }
+            if ($system->SETTINGS['offer_available_for'] == '2'){
+                $template->assign_vars(array(
+                    'B_SHOW_OFFERME_TWO' => 'true'
+                ));
+                }
+        }
+   // eof make offer
         $template->assign_vars(array(
                 'TITLE' => $MSG['028'],
                 'ERROR' => ($ERR == 'ERR_') ? '' : $$ERR,
@@ -650,6 +708,13 @@ switch ($_SESSION['action']) {
                 'B_FEES' => ($system->SETTINGS['fees'] == 'y' && !$user->permissions['no_fees']),
                 'B_SHIPPING' => ($system->SETTINGS['shipping'] == 'y'),
                 'B_SUBTITLE' => ($system->SETTINGS['subtitle'] == 'y'),
+		//bof make offer
+		'OFFER_Y' => ($with_offer == 'yes') ? 'checked' : '',
+                'OFFER_N' => ($with_offer == 'yes') ? '' : 'checked',
+                'WITH_OFFER' =>  $with_offer,
+                'MAKE_OFFER_REJECT' => $system->print_money_nosymbol($make_offer_reject,false),
+                'MAKE_OFFER_ACCEPT' => $system->print_money_nosymbol($make_offer_accept,false),
+            // eof make offer
                 'B_AUTORELIST' => ($system->SETTINGS['autorelist'] == 'y')
                 ));
         break;
