@@ -20,6 +20,8 @@
 					<li class="list-group-item"><a href="{SITEURL}admin/currency.php">{L_currency_settings}</a></li>
 					<li class="list-group-item"><a href="{SITEURL}admin/time.php">{L_time_settings}</a></li>
 					<li class="list-group-item"><a href="{SITEURL}admin/buyitnow.php">{L_2__0025}</a></li>
+					<li class="list-group-item"><a href="{SITEURL}admin/makeoffer.php">{L_2__1025}</a></li> 
+
 					<li class="list-group-item"><a href="{SITEURL}admin/defaultcountry.php">{L_default_country}</a></li>
 					<li class="list-group-item"><a href="{SITEURL}admin/counters.php">{L_counter_settings}</a></li>
 					<li class="list-group-item"><a href="{SITEURL}admin/multilingual.php">{L_multilingual_support}</a></li>
