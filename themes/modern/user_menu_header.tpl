@@ -31,6 +31,7 @@
 					<li><a href="yourauctions_s.php">{L_2__0056}</a></li>
 					<li><a href="yourauctions_sold.php">{L_25_0119}</a></li>
 					<li><a href="selling.php">{L_453}</a></li>
+				        <li><a class="list-group-item" href="viewselleroffers.php">{L_1453}</a></li>
 <!-- ENDIF -->
 				</ul>
 			</div>
@@ -44,6 +45,7 @@
 					<li><a href="item_watch.php">{L_472}</a></li>
 					<li><a href="yourbids.php">{L_620}</a></li>
 					<li><a href="buying.php">{L_454}</a></li>
+					   <li><a class="list-group-item" href="youroffers.php">{L_1454}</a></li>
 				</ul>
 			</div>
 		</div>
