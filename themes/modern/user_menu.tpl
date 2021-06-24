@@ -8,6 +8,7 @@
 	<a class="list-group-item" href="invoices.php">{L_1057}</a>
 	<a href="#" class="list-group-item disabled">{L_244}</a>
 	<a class="list-group-item" href="selleremails.php">{L_25_0188}</a>
+	    <a class="list-group-item" href="viewbuyeroffers.php">{L_1455}</a>
 	<a class="list-group-item" href="edit_data.php">{L_621}</a>
 <!-- ELSEIF THISPAGE eq 'selling' -->
 	<!-- IF B_CANSELL -->
@@ -17,6 +18,7 @@
 	<a class="list-group-item" href="yourauctions_s.php">{L_2__0056}</a>
 	<a class="list-group-item" href="yourauctions_sold.php">{L_25_0119}</a>
 	<a class="list-group-item" href="selling.php">{L_453}</a>
+	<a class="list-group-item" href="youroffers.php">{L_1454}</a>
 	<!-- ENDIF -->
 <!-- ELSEIF THISPAGE eq 'summary' -->
 	<div class="panel panel-success">
