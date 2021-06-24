@@ -186,6 +186,9 @@ if (isset($_POST['action'])) {
                       shipping_terms = :shipping_terms,
                       bold = :bold,
                       highlighted = :highlighted,
+                      make_offer = :make_offer,
+                      make_offer_reject = :offer_reject,
+                      make_offer_accept = :offer_accept,
                       featured = :featured
                       WHERE id = :auc_id";
             $params = array();
@@ -210,6 +213,12 @@ if (isset($_POST['action'])) {
             $params[] = array(':bold', (isset($_POST['is_bold'])), 'bool');
             $params[] = array(':highlighted', (isset($_POST['is_highlighted'])), 'bool');
             $params[] = array(':featured', (isset($_POST['is_featured'])), 'bool');
+                // bof make offer
+            $params[] = array(':make_offer', $_POST['make_offer'], 'bool');
+            $params[] = array(':offer_reject', $_POST['offer_reject'], 'float');
+            $params[] = array(':offer_accept', $_POST['offer_accept'], 'float');
+    // eof make offer
+
             $params[] = array(':auc_id', $_POST['id'], 'int');
             $db->query($query, $params);
 
@@ -329,6 +338,13 @@ $template->assign_vars(array(
         'IS_HIGHLIGHTED' => ($auction_data['highlighted']) ? 'checked' : '',
         'IS_FEATURED' => ($auction_data['featured']) ? 'checked' : '',
         'SUSPENDED' => ($auction_data['suspended'] == 0) ? $MSG['no'] : $MSG['yes'],
+    //eof sizes
+       'MAKE_OFFER_Y' => ($auction_data['make_offer'] == 'yes') ? 'checked' : '',
+       'MAKE_OFFER_N' => ($auction_data['make_offer'] == 'yes') ? '' : 'checked',
+       'MAKE_OFFER' =>$auction_data['make_offer'],
+       'OFFER_REJECT' => $system->print_money_nosymbol($auction_data['make_offer_reject'],false),
+       'OFFER_ACCEPT' => $system->print_money_nosymbol($auction_data['make_offer_accept'],false),
+// bof make offer
 
         'B_MKFEATURED' => ($system->SETTINGS['ao_hpf_enabled'] == 'y'),
         'B_MKBOLD' => ($system->SETTINGS['ao_bi_enabled'] == 'y'),
