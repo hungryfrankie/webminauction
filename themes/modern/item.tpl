@@ -202,6 +202,45 @@ $(document).ready(function() {
 							<br><br>
 						</div>
 <!-- IF B_HASENDED eq false and B_CAN_BUY -->
+<!-- bof make offer -->
+   <!-- IF SHOW_OFFER_BUTTON -->
+<div class="well well-sm">
+	<div class="row">
+		 <form name="offer" action="{SITEURL}make_offer.php" method="post">
+           <div class="form-group">
+		   <div class="col-md-8 col-md-offset-2">
+		   <input type="hidden" class="form-control" id="offer_price" placeholder="Enter Yoour Offer" name="offer_price">
+		   <input type="hidden"  id="b_first_offer" name="b_first_offer" value=1>
+           <input type="hidden" class="form-group" id="offer_item" value="{TITLE}" name="offer_item">
+		   <input type="hidden" class="form-group" id="offer_item_id" value="{ID}" name="offer_item_id">
+           <input type="hidden"  id="offer_item_image" value="{PIC_URL}" name="offer_item_image">
+           <input type="hidden"  id="offer_item_owner" value="{SELLER_ID}" name="offer_item_owner">
+           <input type="hidden"  id="offer_sender" value="{VIEWING_BIDDER}" name="offer_sender">
+           <input type="hidden"  id="offer_reciever" value="{SELLER_ID}"  name="offer_reciver">
+           <input type="hidden"  id="offer_date" value="{TIME_BLUB}" name="offer_date">
+           <input type="hidden"  id="offer_status" value="pending" name="offer_status">
+           <input type="hidden"  id="offer_reject" value="{OFFER_REJECT}" name="offer_reject">
+           <input type="hidden"  id="offer_accept" value="{OFFER_ACCEPT}" name="offer_accept">
+           <input type="hidden"  id="make_offer" value= "offer" name="make_offer">
+           <input type="hidden"  id="offer_action" value="action" name="offer_action">
+		   <input type="hidden" name="csrftoken" value="{_CSRFTOKEN}">
+           <input type="hidden"  id="offer_counter_offer" value="0" name="offer_counter_offer">
+		   <input type="hidden"  id="offer_item_title" value="{TITLE}" name="offer_item_title">
+		   <input type="hidden"  id="offer_item_seller_nick" value="{SELLER_NICK}" name="offer_item_seller_nick">
+		   <input type="hidden"  id="offer_can_buy" value="{B_CAN_BUY}" name="offer_can_buy">
+		   <input type="hidden"  id="offer_item_qty" value="{QTY}" name="offer_item_qty">
+		   <input type="hidden"  id="offer_item_shipping" value="{SHIPPING_COST}" name="offer_item_shipping">
+		   <input type="hidden"  id="offer_item_shipping_additional" value="{ADDITIONAL_SHIPPING_COST}" name="offer_item_shipping_additional"> 
+		   <button type="submit" class="form-control btn btn-info ">{L_9804}</button>
+          </div>
+		  </div>
+		 </form> 
+    </div>
+</div>
+    <!-- ENDIF -->
+
+<!-- eof make offer -->	
+
 						<div class="well well-sm">
 							<div class="row">
 	<!-- IF B_NOTBNONLY -->
