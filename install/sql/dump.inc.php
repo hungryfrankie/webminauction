@@ -1895,3 +1895,33 @@ $query[] = "CREATE TABLE `" . $DBPrefix . "winners` (
   `shipped` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY  (`id`)
 ) ;";
+# ############################
+
+#
+# Table structure for table `" . $DBPrefix . "offers`
+#
+
+$query[] = "DROP TABLE IF EXISTS `" . $DBPrefix . "banners`;";
+$query[] = "CREATE TABLE `" . $DBPrefix . "banners` (
+    `offer_id` int(11) NOT NULL auto_increment,
+    `offer_item_id` varchar(255) default NULL,
+    `offer_item_image` varchar(255) default NULL,
+    `offer_sender` varchar(255) default NULL,
+    `offer_reciver` varchar(255) default NULL,
+    `offer_status` varchar(255) default NULL,
+    `offer_price` varchar(255) default NULL,
+    `offer_counter_offer` varchar(255) default NULL,
+    `offer_date` datetime default NULL,
+    `offer_sender_role` varchar(255) default NULL,
+    `offer_item_owner` varchar(255) default NULL,
+    `offer_item_title` varchar(255) default NULL,
+    `offer_item_seller_nick` varchar(255) default NULL,
+    `offer_item_owner` varchar(255) default NULL,
+    `offer_item_qty` int(11) NOT NULL default '0',
+    `offer_item_shipping` varchar(255) default NULL,
+    `offer_item_shipping_additonal` varchar(255) default NULL,
+    `offer_item_msg` varchar(3255) default NULL,
+  PRIMARY KEY  (`offer_id`)
+) ;";
+
+#
