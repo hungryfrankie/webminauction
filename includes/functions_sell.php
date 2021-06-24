@@ -287,8 +287,8 @@ function addauction()
 {
     global $DBPrefix, $_SESSION, $user, $a_starts, $a_ends, $payment_text, $system, $fee, $db, $dt;
 
-    $query = "INSERT INTO " . $DBPrefix . "auctions (user,title,subtitle,starts,description,pict_url,category,secondcat,minimum_bid,shipping_cost,additional_shipping_cost,reserve_price,buy_now,auction_type,duration,increment,shipping,payment,international,ends,photo_uploaded,initial_quantity,quantity,relist,shipping_terms,bn_only,bold,highlighted,featured,current_fee,tax,taxinc) VALUES
-	(:user_id, :title, :subtitle, :starts, :description, :pict_url, :catone, :cattwo, :min_bid, :shipping_cost, :additional_shipping_cost, :reserve_price, :buy_now, :auction_type, :duration, :increment, :shipping, :payment, :international, :ends, :photo_uploaded, :initial_quantity, :quantity, :relist, :shipping_terms, :bn_only, :bold, :highlighted, :featured, :fee, :tax, :taxinc)";
+    $query = "INSERT INTO " . $DBPrefix . "auctions (user,title,subtitle,starts,description,pict_url,category,secondcat,minimum_bid,shipping_cost,additional_shipping_cost,reserve_price,buy_now,auction_type,duration,increment,shipping,payment,international,ends,photo_uploaded,initial_quantity,quantity,relist,shipping_terms,bn_only,bold,highlighted,featured,current_fee,make_offer,make_offer_reject,make_offer_accept,tax,taxinc) VALUES
+	(:user_id, :title, :subtitle, :starts, :description, :pict_url, :catone, :cattwo, :min_bid, :shipping_cost, :additional_shipping_cost, :reserve_price, :buy_now, :auction_type, :duration, :increment, :shipping, :payment, :international, :ends, :photo_uploaded, :initial_quantity, :quantity, :relist, :shipping_terms, :bn_only, :bold, :highlighted, :featured, :fee,:make_offer,:make_offer_reject,:make_offer_accept, :tax, :taxinc)";
 
     $params = array();
     $params[] = array(':user_id', $user->user_data['id'], 'int');
@@ -321,6 +321,11 @@ function addauction()
     $params[] = array(':highlighted', $_SESSION['SELL_is_highlighted'], 'bool');
     $params[] = array(':featured', $_SESSION['SELL_is_featured'], 'bool');
     $params[] = array(':fee', $fee, 'float');
+	// bof make offer              
+    $params[] = array(':make_offer', $_SESSION['SELL_with_offer'], 'str');
+    $params[] = array(':make_offer_reject', $system->input_money(($_SESSION['SELL_make_offer_reject'] == 'yes') ? $_SESSION['SELL_make_offer_reject'] : 0), 'float');
+    $params[] = array(':make_offer_accept', $system->input_money(($_SESSION['SELL_make_offer_accept'] == 'yes') ? $_SESSION['SELL_make_offer_accept'] : 0), 'float');
+    //eof make offer
     $params[] = array(':tax', $_SESSION['SELL_is_taxed'], 'bool');
     $params[] = array(':taxinc', $_SESSION['SELL_tax_included'], 'bool');
     $db->query($query, $params);
