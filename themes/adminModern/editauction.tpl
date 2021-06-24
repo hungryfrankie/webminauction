@@ -114,6 +114,22 @@
 						<td align="right">{L_497}</td>
 						<td><input type="text" name="buy_now" size="40" maxlength="40" value="{BN_PRICE}"></td>
 					</tr>
+					    <tr>
+                                               <td align="right">{L_9021}</td>
+                                               <td>
+                                                   <input type="radio" name="make_offer" value="no" {MAKE_OFFER_N}> {L_no}
+                                                  <input type="radio" name="make_offer" value="yes" {MAKE_OFFER_Y}> {L_yes}
+                                               </td>
+                                       </tr>
+                                       <tr>
+                                            <td align="right">{L_9022}</td>
+                                            <td><input type="text" name="offer_reject" size="40" maxlength="40" value="{OFFER_REJECT}"></td>
+                                       </tr>
+                                       <tr>
+                                            <td align="right">{L_9023}</td>
+                                            <td><input type="text" name="offer_accept" size="40" maxlength="40" value="{OFFER_ACCEPT}"></td>
+                                        </tr>
+
 					<tr>
 						<td align="right">{L_120}</td>
 						<td>
