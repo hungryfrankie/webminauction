@@ -1815,6 +1815,7 @@ $query[] = "CREATE TABLE `" . $DBPrefix . "useraccounts` (
   `relist` double(8,2) NOT NULL default '0',
   `reserve` double(8,2) NOT NULL default '0',
   `buynow` double(8,2) NOT NULL default '0',
+  `offer_fee` double(8,2) NOT NULL default '0',
   `picture` double(8,2) NOT NULL default '0',
   `extracat` double(8,2) NOT NULL default '0',
   `signup` double(8,2) NOT NULL default '0',
