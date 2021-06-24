@@ -350,9 +350,10 @@ function addoutstanding()
             'buynow',
             'picture',
             'extracat',
+             'offer',
             'total'
         );
-
+// bof make offer. added offer to the array above
         $query = "SELECT * FROM " . $DBPrefix . "useraccounts WHERE auc_id = :auction_id AND user_id = :user_id";
         $params = array();
         $params[] = array(':auction_id', $_SESSION['SELL_auction_id'], 'int');
@@ -372,8 +373,8 @@ function addoutstanding()
 
     }
 
-    $query = "INSERT INTO " . $DBPrefix . "useraccounts (auc_id,user_id,setup,featured,bold,highlighted,subtitle,relist,reserve,buynow,picture,extracat,total,paid) VALUES
-	(:auction_id, :user_id, :setup_fee, :featured_fee, :bold_fee, :highlighted_fee, :subtitle_fee, :relist_fee, :reserve_fee, :buynow_fee, :picture_fee, :extracat_fee, :fee, 0)";
+    $query = "INSERT INTO " . $DBPrefix . "useraccounts (auc_id,user_id,setup,featured,bold,highlighted,subtitle,relist,reserve,buynow,picture,offer,extracat,total,paid) VALUES
+	(:auction_id, :user_id, :setup_fee, :featured_fee, :bold_fee, :highlighted_fee, :subtitle_fee, :relist_fee, :reserve_fee, :buynow_fee, :picture_fee,:offer_fee, :extracat_fee, :fee, 0)";
 
     $params[] = array(':auction_id', $_SESSION['SELL_auction_id'], 'int');
     $params[] = array(':setup_fee', $fee_data['setup_fee'], 'float');
@@ -385,6 +386,9 @@ function addoutstanding()
     $params[] = array(':reserve_fee', $fee_data['reserve_fee'], 'float');
     $params[] = array(':buynow_fee', $fee_data['buynow_fee'], 'float');
     $params[] = array(':picture_fee', $fee_data['picture_fee'], 'float');
+	// bof make offer
+    $params[] = array(':offer_fee', $fee_data['offer_fee'], 'float');
+     // eof make oofer
     $params[] = array(':extracat_fee', $fee_data['extracat_fee'], 'float');
     $params[] = array(':fee', $fee_data['total'], 'float');
     $params[] = array(':user_id', $user->user_data['id'], 'int');
@@ -422,8 +426,10 @@ function get_fee($minimum_bid, $just_fee = true)
         'reserve_fee' => 0,
         'buynow_fee' => 0,
         'picture_fee' => 0,
+	'offer_fee' => 0,
         'extracat_fee' => 0
     );
+	// bof make offer added offer fee to the array above
     while ($row = $db->fetch()) {
         if ($minimum_bid >= $row['fee_from'] && $minimum_bid <= $row['fee_to'] && $row['type'] == 'setup_fee') {
             if ($row['fee_type'] == 'flat') {
