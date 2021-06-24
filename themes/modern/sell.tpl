@@ -660,6 +660,21 @@ $(document).ready(function(){
 						</tr>
 		<!-- ENDIF -->
 	<!-- ENDIF -->
+	<!-- IF B_SHOW_OFFERME -->
+    <tr>
+							<td valign="top" align="right"><b>{L_9021}</b></td>
+							<td>{WITH_OFFER}</td>
+						</tr>
+    <tr>
+							<td valign="top" align="right"><b>{L_9022}</b></td>
+							<td>{MAKE_OFFER_REJECT}</td>
+						</tr>
+                        <tr>
+							<td valign="top" align="right"><b>{L_9023}</b></td>
+							<td>{MAKE_OFFER_ACCEPT}</td>
+						</tr>
+	
+	<!-- ENDIF -->
 	<!-- IF B_SHIPPING -->
 						<tr>
 							<td valign="top" align="right"><b>{L_023}</b></td>
