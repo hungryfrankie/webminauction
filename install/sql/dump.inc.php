@@ -134,6 +134,9 @@ $query[] = "CREATE TABLE `" . $DBPrefix . "auctions` (
   `tax` tinyint(1) default 0,
   `taxinc` tinyint(1) default 0,
   `bn_sale` tinyint(1) default 0,
+   `make_offer` varchar(70),
+   `make_offer_reject` float NOT NULL default '0',
+    `make_offer_accept` float NOT NULL default '0',
   PRIMARY KEY  (`id`)
 );";
 
