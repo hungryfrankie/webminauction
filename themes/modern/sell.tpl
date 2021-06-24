@@ -1,4 +1,17 @@
 <!-- IF PAGE eq 0 -->
+<style>
+input[type="radio"]:disabled {
+    -webkit-appearance: none;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0px;
+    background-clip: content-box;
+    border: 4px solid DodgerBlue;
+    background-color: white;
+    border-radius: 50%;
+}
+</style>
 <script type="text/javascript">
 $(document).ready(function(){
 	// set up the page
@@ -52,6 +65,7 @@ $(document).ready(function(){
 			$("#min_bid").removeAttr("disabled");
 			$(".dutchhide").hide();
 			$("#minval_text").text("{L_038}");
+			$(".dutchshow").show();
 		}
 		else
 		{
@@ -62,6 +76,7 @@ $(document).ready(function(){
 			$("#iqty").attr("disabled","disabled");
 			$("#iqty").val("1");
 			$("#minval_text").text("{L_020}");
+			$(".dutchshow").hide();
 		}
 	});
 	$("#bps").click(function() {
