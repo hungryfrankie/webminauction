@@ -1257,4 +1257,165 @@ $MSG['count_minutes'] = " minutes";
 $MSG['count_minute'] = " minute";
 $MSG['count_seconds'] = " seconds";
 $MSG['count_second'] = " second";
+$MSG['2__1025'] = 'Make an offer';
+$MSG['25_0225']='Offers you recived';
+$MSG['9001'] = 'Image';
+$MSG['9002'] = 'Item';
+$MSG['9003'] = 'Price';
+$MSG['9004'] = 'Status';
+$MSG['9005'] = 'Action';
+$MSG['9006'] = 'Date';
+$MSG['9007'] = 'Message';
+$MSG['9008'] = 'M8';
+$MSG['9009'] = 'M9';
+$MSG['9010'] = 'M10';
+$MSG['9011'] = 'Condition';
+$MSG['9012'] = 'Manufacturer';
+$MSG['9014'] = 'Model';
+$MSG['9015'] = 'Colour';
+$MSG['9016'] = 'Year manufactured';
+$MSG['9017'] = 'Height';
+$MSG['9018'] = 'Width';
+$MSG['9019'] = 'Lenght';
+$MSG['9020'] = 'Weight';
+$MSG['9021'] = 'Allow Bidders to make an offer';
+$MSG['9022'] = 'Reject offers bellow this amount automaticaly';
+$MSG['9023'] = 'Accept offers more than this amount automaticaly';
+$MSG['9024'] = 'Offers you sent';
+$MSG['9025'] = 'Offers you recived';
+$MSG['9026'] = 'Accept offer';
+$MSG['9027'] = 'Reject offer';
+$MSG['9028'] = 'Make counter offer';
+$MSG['9029'] = 'View offer';
+$MSG['9030'] = 'view counter offer';
+$MSG['9032'] = 'Make an offer';
+$MSG['9033'] = 'WxHxL';
+$MSG['9034'] = 'Please select condition of your item';
+$MSG['9035'] = 'Make Offer fee';
+
+$MSG['9999'] = ' <<< ';
+$MSG['9998'] = ' Back';
+$MSG['9901'] = 'Offers on your items';
+$MSG['9902'] = 'Offers you placed on other\'s items';
+$MSG['9801'] = 'Please enter your offer.';
+$MSG['9802'] = 'Your offer has been accepted. Please make a payment now.';
+$MSG['9803'] = 'Your offer has been sent to the buyer. He will reply shortly.';
+$MSG['9804'] = 'Make an offer';
+$MSG['9805'] = 'Make an offer to buy now.';
+$MSG['9806'] = 'Quantity which you are interested in.';
+$MSG['9807'] = 'Your offer.';
+$MSG['9808'] = 'Quantity';
+$MSG['9809'] = 'Your counter offer';
+$MSG['9810'] = 'Your offer was';
+$MSG['9811'] = 'Buy Now';
+$MSG['9812'] = 'Your offer is accepted you can pay now.';
+$MSG['9814'] = 'Your offer';
+$MSG['9815'] = 'Make counter offer';
+$MSG['9816'] = 'Make counter offer';
+
+$MSG['9817'] = 'Your Price';
+$MSG['9818'] = 'Decline';
+$MSG['9819'] = 'Make counter offer';
+$MSG['9820'] = 'Accept';
+$MSG['9821'] = 'This offer is declined';
+$MSG['9822'] = 'This offer is expired';
+$MSG['9823'] = 'You are about to decline this offer';
+$MSG['9824'] = 'You are about to accept this offer';
+$MSG['9825'] = 'You are about to make a counter offer on this offer';
+$MSG['9826'] = 'You have declined this offer';
+$MSG['9827'] = 'You have accepted this offer';
+$MSG['9828'] = 'You have made a counter offer';
+$MSG['9830'] = 'You can send a message here';
+$MSG['9831'] = 'Has counter offer';
+$MSG['9832'] = 'Awaiting payment';
+$MSG['9833'] = 'This offer is pending';
+$MSG['9834'] = 'This offer is awaiting for response';
+
+$MSG['9501'] = 'Make an offer';
+
+
+$MSG['9579'] = 'with store';
+$MSG['9580'] = 'View Users Store';
+$MSG['9581'] = 'Store Items from  ';
+
+
+$MSG['1453'] = 'offers recived';
+$MSG['1454'] = 'Offers placed';
+$MSG['9453'] = 'offers recived';
+$MSG['9454'] = 'Offers placed';
+// info help//
+$MSG['9701'] = 'This is the title of your page. Use the name of what you are selling here';
+$MSG['9702'] = 'This is the subtitle you can put a short description here.';
+$MSG['9703'] = 'This is the condition of your product. use the one that best describes the condition of what you are selling.';
+$MSG['9704'] = 'This is the name of the maker of what you want to sell.';
+$MSG['9705'] = 'This is the model as the manufacture assigns to it.';
+$MSG['9706'] = 'This is the colour of your product';
+$MSG['9707'] = 'This is the year that this product is made';
+$MSG['9708'] = 'This is the description of the product. you can use html.';
+$MSG['9709'] = 'this is the type of your selling. here you can choose if it is an auction or a fixed price one';
+$MSG['9710'] = 'This is the number of avilble stock. this only applies to fixed price sales. for auction it stays at 1';
+$MSG['9711'] = 'This is the starting price of your auction';
+$MSG['9712'] = 'Here you can sell a minimum price that you are willing to accept';
+$MSG['9714'] = 'Fixed Price only. you do not take bids on this';
+$MSG['9715'] = 'Your Price';
+$MSG['9716'] = 'You can allow people to offer you a price for your item';
+$MSG['9717'] = 'Any offer bellow this will be automticly rejected';
+$MSG['9718'] = 'Any offer above this will be automticly accepted';
+
+$MSG['9719'] = 'This is for using online shipping';
+$MSG['9720'] = 'Cost of Shipping';
+$MSG['9721'] = 'Cost of handeling';
+$MSG['9722'] = 'You can put any additional shipping information here';
+$MSG['9723'] = 'Options to improve the visability of your advertising';
+$MSG['9724'] = 'Your Can start your auction at a set date';
+$MSG['9725'] = 'Your Price';
+$MSG['9726'] = 'Your can end your auction at a certain time or you can choose duration';
+$MSG['9727'] = 'What you want to say about shipping.';
+$MSG['9728'] = 'YChoose your payment method';
+$MSG['9729'] = 'Make your listing featured to display in front page at random and listing at top';
+$MSG['9730'] = 'your listing will be bold. this attracts buyers';
+$MSG['9731'] = 'Your listing will be highlited. this attracts buyers';
+$MSG['9732'] = 'Choose method of payment you accept';
+$MSG['9733'] = 'This is the catgory that your item is going to be displayed. Make sure it is the most related category';
+
+
+
+
+$MSG['19701'] = '';
+$MSG['19702'] = '';
+$MSG['19703'] = '';
+$MSG['19704'] = '';
+$MSG['19705'] = '';
+$MSG['19706'] = '';
+$MSG['19707'] = '';
+$MSG['19708'] = '';
+$MSG['19709'] = '';
+$MSG['19710'] = '';
+$MSG['19711'] = '';
+$MSG['19712'] = '';
+$MSG['19713'] = '';
+$MSG['19714'] = '';
+$MSG['19715'] = '';
+$MSG['19716'] = '';
+$MSG['19717'] = '';
+$MSG['19718'] = '';
+$MSG['19719'] = '';
+$MSG['19720'] = '';
+$MSG['19721'] = '';
+$MSG['19722'] = '';
+$MSG['19723'] = '';
+$MSG['19724'] = '';
+$MSG['19725'] = '';
+$MSG['19726'] = '';
+$MSG['19727'] = '';
+$MSG['19728'] = '';
+$MSG['19729'] = '';
+$MSG['19730'] = '';
+$MSG['19731'] = '';
+$MSG['19732'] = '';
+$MSG['19733'] = '';
+
+$ERR_9000 = 'You can not make an offer on your own item.';
+$MSG['9415'] = 'There was an error processing your request.';
+
 
