@@ -88,7 +88,7 @@ if (!function_exists('view')) {
 					LEFT JOIN " . $DBPrefix . "bannerskeywords k ON (k.banner = b.id)
 					WHERE (b.views < b.purchased OR b.purchased = 0)
 					AND k.keyword IS NULL AND c.category IS NULL
-					GROUP BY k.banner, c.banner";
+					GROUP BY k.banner, c.banner,b.id";
             $db->direct_query($query);
             $CKcount = false;
         }
